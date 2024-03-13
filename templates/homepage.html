@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="container_column">
+  <ul>
+    {% for post in posts %}
+    <li>
+      <a href="/posts/{{ post.id }}">{{ post.title }}</a>
+      <p class="post_date">{{ post.friendly_date }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  <a href="/users"><button class="save_button">Users</button></a>
+</div>
+{% endblock %}

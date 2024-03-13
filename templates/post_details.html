@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block title %}{{ post.title }}{% endblock %} {%
+block content %}
+
+<div class="container_column">
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.content }}</p>
+  <p class="post_date">{{ post.friendly_date }}</p>
+  <form>
+    <button class="save_button" formaction="/posts/{{ post.id }}/edit">
+      Edit Post
+    </button>
+    <button
+      class="cancel_delete_button"
+      formaction="/posts/{{ post.id }}/delete"
+      formmethod="POST"
+    >
+      Delete Post
+    </button>
+    <button
+      class="cancel_delete_button"
+      id="post_edit_cancel"
+      formaction="/users"
+    >
+      Cancel
+    </button>
+  </form>
+</div>
+
+{%endblock %}
